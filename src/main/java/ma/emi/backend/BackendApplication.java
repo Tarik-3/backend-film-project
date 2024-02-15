@@ -29,7 +29,7 @@ public class BackendApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Stream.of("Moha","Tara","Malik").forEach(name ->{
+        Stream.of("Moha","Tarik","Malik").forEach(name ->{
             User user = new User();
             user.setUsername(name);
             userRepository.save(user);
