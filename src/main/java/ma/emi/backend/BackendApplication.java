@@ -34,7 +34,7 @@ public class BackendApplication implements CommandLineRunner {
             user.setUsername(name);
             userRepository.save(user);
         });
-        System.out.println("Tarik !!!");
+        System.out.println("Tarik jjhhnjn !!!");
         System.out.println(userRepository.findAll());
         
         userRepository.findAll().forEach(user->{
