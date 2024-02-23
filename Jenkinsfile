@@ -14,7 +14,9 @@ pipeline{
   }
   stages{
     stage("init"){
-      gv = load "jenkins.groovy"
+      script{
+        gv = load "jenkins.groovy"
+      }
     }
     stage("testing"){
       when{
@@ -23,12 +25,18 @@ pipeline{
         }
       }
       steps{
+        script{
         gv.test()
+          
+        }
       }
     }
     stage("running"){
       steps{
+         script{
         gv.running()
+          
+        }
         
       }
     }
