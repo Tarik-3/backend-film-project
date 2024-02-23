@@ -4,6 +4,5 @@ def test() {
 
 def running() {
   echo"I am Tarik, and I am a hero"
-        
-        echo "${params.VERSION}"
+       
 }
