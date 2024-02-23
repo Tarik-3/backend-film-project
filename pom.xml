@@ -51,7 +51,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
-         <finalName>backend-film</finalName>
+         <finalName>backend</finalName>
     </build>
 
 </project>
