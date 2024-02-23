@@ -47,27 +47,7 @@ pipeline{
         }
       }
     }
-    stage("running"){
-      when{
-        expression{
-          params.running
-        }
-      }
-      input{
-        message "Why are you here"
-        ok "Buff"
-        parameters{
-          choice(name: 'ENV', choices:['MACHICHGHOLK','i AM SAD','i DONT KNOW'], description: '')
-          
-        }
-      }
-      steps{
-         script{
-          gv.running()  
-           echo "running for ${ENV}"
-        }
-      }
-    }
+
     stage("deploy"){
       when {
         expression{
