@@ -19,7 +19,6 @@ def running() {
 }
 def deploy() {
    echo "Deployement"
-   sh"docker login -u "
-   sh"docker push"
+  
 }
 return this
