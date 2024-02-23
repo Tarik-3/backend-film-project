@@ -7,7 +7,7 @@ def building() {
    echo "I will build the project image"
    withCredentials([usernamePassword(credentialsId:"Tarik-docker",passwordVariable:"PASS", usernameVariable: "USER")]){
       sh "docker build -t tarik3/jenkins-test:${params.VERSION} ."
-      sh "echo $PASS | docker login -u $USER -password--stdin" 
+      sh "echo $PASS | docker login -u $USER --password-stdin" 
       sh "docker push tarik3/jenkins-test:${params.VERSION} "
    }
    
