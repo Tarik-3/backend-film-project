@@ -1,3 +1,4 @@
+def gv
 pipeline{
   agent any
   parameters{
@@ -12,6 +13,9 @@ pipeline{
     maven 'maven-3.9.6'
   }
   stages{
+    stage("init"){
+      gv = load "jenkins.groovy"
+    }
     stage("testing"){
       when{
         expression{
@@ -19,17 +23,12 @@ pipeline{
         }
       }
       steps{
-      echo"I am Tarik, and I am here"
-        sh "mvn package"
-        
+        gv.test()
       }
     }
     stage("running"){
       steps{
-      echo"I am Tarik, and I am a hero"
-        echo"Running with ${CREDENTIAL}"
-        echo "${params.VERSION}"
-        
+        gv.running()
         
       }
     }
