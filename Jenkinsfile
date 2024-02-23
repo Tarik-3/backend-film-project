@@ -7,6 +7,7 @@ pipeline{
     booleanParam(name:'executeTests', defaultValue: true, description: '')
     booleanParam(name:'building', defaultValue: true, description: '')
     booleanParam(name:'running', defaultValue: true, description: '')
+    booleanParam(name:'deploy', defaultValue: true, description: '')
 }
   environment{
     CREDENTIAL = credentials("Tarik-3")
@@ -64,6 +65,18 @@ pipeline{
          script{
           gv.running()  
            echo "running for ${ENV}"
+        }
+      }
+    }
+    stage("deploy"){
+      when {
+        expression{
+          params.deploy
+        }
+      }
+      steps{
+        script{
+          gv.deploy()
         }
       }
     }
