@@ -1,5 +1,8 @@
 pipeline{
   agent any
+  environment{
+    CREDENTIAL = credentials("Tarik-3")
+  }
   tools{
     maven 'maven-3.9.6'
   }
@@ -14,7 +17,9 @@ pipeline{
     stage("running"){
       steps{
       echo"I am Tarik, and I am a hero"
-        sh "mvn spring-boot:run"
+        echo"Running with ${CREDENTIAL}"
+        sh "${CREDENTIAL}"
+        
         
       }
     }
