@@ -5,7 +5,7 @@ def test() {
 
 def building() {
    echo "I will build the project image"
-   sh "docker build -t tarik3/jenkins-test ."
+   sh "docker build -t tarik3/jenkins-test:${params.VERSION} ."
    
 }
 def running() {
