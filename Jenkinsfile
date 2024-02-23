@@ -6,6 +6,7 @@ pipeline{
     choice(name: 'VERSION', choices:['1.1','1.2','1.3','1.7'], description: '')
     booleanParam(name:'executeTests', defaultValue: true, description: '')
     booleanParam(name:'building', defaultValue: true, description: '')
+    booleanParam(name:'running', defaultValue: true, description: '')
 }
   environment{
     CREDENTIAL = credentials("Tarik-3")
@@ -46,6 +47,11 @@ pipeline{
       }
     }
     stage("running"){
+      when{
+        expression{
+          params.running
+        }
+      }
       input{
         message "Why are you here"
         ok "Buff"
