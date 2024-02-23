@@ -37,7 +37,10 @@ pipeline{
       input{
         message "Why are you here"
         ok "Buff"
-        choice(name: 'ENV', choices:['MACHICHGHOLK','i AM SAD','i DONT KNOW'], description: '')
+        parameters{
+          choice(name: 'ENV', choices:['MACHICHGHOLK','i AM SAD','i DONT KNOW'], description: '')
+          
+        }
       }
       steps{
          script{
