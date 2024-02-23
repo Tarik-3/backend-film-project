@@ -1,4 +1,5 @@
 def gv
+
 pipeline{
   agent any
   parameters{
@@ -33,9 +34,15 @@ pipeline{
       }
     }
     stage("running"){
+      input{
+        message "Why are you here"
+        ok "Buff"
+        choice(name: 'ENV', choices:['MACHICHGHOLK','i AM SAD','i DONT KNOW'], description: '')
+      }
       steps{
          script{
           gv.running()  
+           echo "running for ${ENV}"
         }
       }
     }
